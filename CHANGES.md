@@ -2,6 +2,10 @@
 
 This document describes the relevant changes between releases of the API model.
 
+## 0.0.454 Apr 17 2026
+- [OCM-23443] Add `ZeroEgressDefaultDomains` resource and type for ROSA HCP
+- Add API endpoints for zero egress default domains for ROSA HCP
+
 ## 0.0.453 Mar 11 2026
 - Add `Visibility` field of type `AzureKmsEncryptionVisibility` to the `AzureKmsEncryption` type.
 - Add `OidcIssuerUrl` field to ARO-HCP `Azure` type.
