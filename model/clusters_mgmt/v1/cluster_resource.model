@@ -222,4 +222,9 @@ resource Cluster {
 	locator ImageMirrors {
 		target ImageMirrors
 	}
+
+	// Reference to the resource that manages the default proxy domains for zero egress clusters.
+	locator ZeroEgressDefaultDomains {
+		target ZeroEgressDefaultDomains
+	}
 }

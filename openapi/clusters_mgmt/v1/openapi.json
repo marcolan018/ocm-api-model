@@ -10568,6 +10568,43 @@
         }
       }
     },
+    "/api/clusters_mgmt/v1/clusters/{cluster_id}/zero_egress_default_domains": {
+      "get": {
+        "description": "Retrieves the default proxy domains for this zero egress cluster.",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZeroEgressDefaultDomains"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/clusters_mgmt/v1/deleted_clusters": {
       "get": {
         "description": "Retrieves a list of deleted clusters",
@@ -20866,6 +20903,18 @@
           "WildcardsAllowed",
           "WildcardsDisallowed"
         ]
+      },
+      "ZeroEgressDefaultDomains": {
+        "description": "Default proxy domains that are automatically injected for zero egress clusters.",
+        "properties": {
+          "domains": {
+            "description": "List of default no-proxy domain patterns that are automatically added\nto the cluster's proxy configuration for zero egress enablement.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
       },
       "Error": {
         "type": "object",
